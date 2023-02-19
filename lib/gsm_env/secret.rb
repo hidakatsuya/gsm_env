@@ -7,7 +7,7 @@ module GsmEnv
     end
 
     def value
-      version.payload.data
+      version.payload.data&.chomp
     end
   end
 end
