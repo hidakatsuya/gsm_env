@@ -3,13 +3,41 @@
 require 'test_helper'
 
 class GsmEnvTest < Test::Unit::TestCase
-  test 'VERSION' do
-    assert do
-      ::GsmEnv.const_defined?(:VERSION)
-    end
+  setup do
+    @project_id = '123'
+    @client = GsmClient.new(project_id: @project_id)
+
+    stub(Google::Cloud::SecretManager).secret_manager_service { @client }
   end
 
-  test 'something useful' do
-    assert_equal('expected', 'actual')
+  test '.load(project_id: "123", filter: "labels.env=production")' do
+    mock.proxy(GsmEnv::Loader).new(project_id: '123', filter: 'labels.env=production')
+
+    GsmEnv.load(project_id: '123', filter: 'labels.env=production')
+
+    assert_equal 'A data', ENV['A']
+    assert_equal 'B data', ENV['B']
+    assert_equal 'C data', ENV['C']
+  end
+
+  test '.load() with GOOGLE_PROJECT_ID' do
+    ENV['GOOGLE_PROJECT_ID'] = '123'
+    mock.proxy(GsmEnv::Loader).new(project_id: '123', filter: nil)
+
+    GsmEnv.load
+
+    assert_equal 'A data', ENV['A']
+    assert_equal 'B data', ENV['B']
+    assert_equal 'C data', ENV['C']
+  end
+
+  test '.load(project_id: "123") { |secret| ... }' do
+    GsmEnv.load(project_id: '123') do |secret|
+      ENV["DEV_#{secret.name}"] = secret.value
+    end
+
+    assert_equal 'A data', ENV['DEV_A']
+    assert_equal 'B data', ENV['DEV_B']
+    assert_equal 'C data', ENV['DEV_C']
   end
 end
