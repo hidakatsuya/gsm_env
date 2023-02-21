@@ -2,6 +2,8 @@
 
 require 'google/cloud/secret_manager'
 
+require_relative 'secret'
+
 module GsmEnv
   class Loader
     def initialize(project_id: nil, filter: nil)

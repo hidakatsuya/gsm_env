@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module GsmEnv
-  class Secret < Struct.new(:secret, :version)
+  Secret = Struct.new(:secret, :version) do
     def name
       @name ||= secret.name.split('/').fetch(3)
     end
@@ -11,4 +11,3 @@ module GsmEnv
     end
   end
 end
-
