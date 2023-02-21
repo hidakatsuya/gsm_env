@@ -1,5 +1,7 @@
 # GsmEnv
 
+[![Test](https://github.com/hidakatsuya/gsm_env/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/gsm_env/actions/workflows/test.yml)
+
 GsmEnv is a gem to set parameters obtained from GCP Secret Manager as environment variables.
 
 ## Status
