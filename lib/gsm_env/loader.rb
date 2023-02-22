@@ -6,7 +6,7 @@ require_relative 'secret'
 
 module GsmEnv
   class Loader
-    def initialize(project_id: nil, filter: nil)
+    def initialize(project_id:, filter: nil)
       @project_id = project_id
       @filter = filter
       @client = Google::Cloud::SecretManager.secret_manager_service
