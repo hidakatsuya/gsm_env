@@ -4,10 +4,8 @@ require 'test_helper'
 
 class GsmEnvTest < Test::Unit::TestCase
   setup do
-    @project_id = '123'
-    @client = GsmClient.new(project_id: @project_id)
-
-    stub(Google::Cloud::SecretManager).secret_manager_service { @client }
+    client = GsmClient.new(project_id: '123')
+    stub(Google::Cloud::SecretManager).secret_manager_service { client }
   end
 
   test '.load(project_id: "123", filter: "labels.env=production")' do
