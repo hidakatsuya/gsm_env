@@ -31,10 +31,10 @@ If bundler is not being used to manage dependencies, install the gem by executin
 GsmEnv.load(project_id: 'your-project-id')
 ```
 
-Alternatively, you can omit the `project_id` by setting it to `GOOGLE_PROJECT_ID` environment variable.
+Alternatively, you can omit the `project_id` by setting it to `GCP_PROJECT_ID` environment variable.
 
 ```ruby
-ENV['GOOGLE_PROJECT_ID'] = 'your-project-id'
+ENV['GCP_PROJECT_ID'] = 'your-project-id'
 
 GsmEnv.load
 ```
@@ -61,7 +61,7 @@ See [test/gsm_env_test.rb](https://github.com/hidakatsuya/gsm_env/blob/main/test
 
 ```
 # .env
-GOOGLE_PROJECT_ID=your-project-id
+GCP_PROJECT_ID=your-project-id
 ```
 
 ```ruby

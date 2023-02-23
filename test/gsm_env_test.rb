@@ -18,8 +18,8 @@ class GsmEnvTest < Test::Unit::TestCase
     assert_equal 'C data', ENV['C']
   end
 
-  test '.load() with GOOGLE_PROJECT_ID' do
-    ENV['GOOGLE_PROJECT_ID'] = '123'
+  test '.load() with GCP_PROJECT_ID' do
+    ENV['GCP_PROJECT_ID'] = '123'
     mock.proxy(GsmEnv::Loader).new(project_id: '123', filter: nil)
 
     GsmEnv.load
