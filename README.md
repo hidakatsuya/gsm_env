@@ -64,17 +64,14 @@ See [test/gsm_env_test.rb](https://github.com/hidakatsuya/gsm_env/blob/main/test
 
 ### Using with Rails
 
-```
-# .env
-GCP_PROJECT_ID=your-project-id
-```
-
 ```ruby
 # config/application.rb
 if defined?(GsmEnv)
-  GsmEnv.load
+  GsmEnv.load(project_id: 'your-project-id')
 end
 ```
+
+Please refer to the [hidakatsuya/shopping_list](https://github.com/hidakatsuya/shopping_list).
 
 ## Contributing
 
