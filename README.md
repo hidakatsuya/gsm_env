@@ -6,14 +6,19 @@ GsmEnv is a gem to set parameters obtained from GCP Secret Manager as environmen
 
 ## Prerequisites
 
-### Google Cloud Settings
-
-- [Setting up Authentication](https://cloud.google.com/ruby/docs/reference/google-cloud-secret_manager/latest/AUTHENTICATION)
-- [Secret Manager Secret Accessor role](https://cloud.google.com/secret-manager/docs/access-secret-version)
-
 ### Supported Ruby Versions
 
 2.7, 3.0, 3.1, 3.2
+
+### Google Cloud
+
+- [Authentication Settings](https://cloud.google.com/ruby/docs/reference/google-cloud-secret_manager/latest/AUTHENTICATION)
+- Required Permissions: `secretmanager.secrets.list` and `secretmanager.versions.access`
+
+#### FYI
+- [Access a secret version](https://cloud.google.com/secret-manager/docs/access-secret-version)
+- [List a secret's versions](https://cloud.google.com/secret-manager/docs/view-secret-version#list)
+- [Cloud Build network](https://cloud.google.com/build/docs/build-config-file-schema#network)
 
 ## Installation
 
