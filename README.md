@@ -1,5 +1,6 @@
 # GsmEnv
 
+[![Gem Version](https://badge.fury.io/rb/gsm_env.svg)](https://badge.fury.io/rb/gsm_env)
 [![Test](https://github.com/hidakatsuya/gsm_env/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/gsm_env/actions/workflows/test.yml)
 
 GsmEnv is a gem to set parameters obtained from GCP Secret Manager as environment variables, inspired by [aws-ssm-env gem](https://github.com/sonodar/aws-ssm-env-ruby).
