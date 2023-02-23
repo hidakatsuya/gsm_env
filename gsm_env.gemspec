@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/hidakatsuya/gsm_env'
-  spec.metadata['changelog_uri'] = 'https://github.com/hidakatsuya/gsm_env/blob/main/CHANGELOG.md'
+  spec.metadata['changelog_uri'] = 'https://github.com/hidakatsuya/gsm_env/releases'
 
   spec.require_paths = ['lib']
   spec.files = Dir.chdir(__dir__) do
