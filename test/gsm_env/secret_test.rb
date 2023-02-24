@@ -6,13 +6,13 @@ class GsmEnv::SecretTest < Test::Unit::TestCase
   include GsmHelper
 
   test 'accessors' do
-    secret_path = { project_id: '123', secret_id: 'ABC' }
+    secret_paths = { project: '123', secret: 'ABC' }
 
     g_secret = gsm_secret(
-      name: gsm_secret_path(**secret_path)
+      name: secret_path(**secret_paths)
     )
     g_secret_version = gsm_secret_version(
-      name: gsm_secret_version_path(**secret_path, version: 9),
+      name: secret_version_path(**secret_paths, secret_version: 9),
       data: 'DATA'
     )
 
