@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.add_dependency 'google-cloud-secret_manager', '~> 1.2'
+  spec.add_dependency 'google-cloud-secret_manager', '>= 1.2.0', '< 2.0.0'
 end
