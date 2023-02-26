@@ -26,15 +26,18 @@ class GsmEnv::SecretTest < Test::Unit::TestCase
     assert_equal @g_secret_version, @secret.version
   end
 
-  test '#name raises an error when secret name could not be obtained correctly' do
-    @g_secret.name = 'invalid resource name'
-    assert_raises GsmEnv::Secret::InvalidName do
-      GsmEnv::Secret.new(@g_secret, @g_secret_version).name
-    end
+  test '#name raises InvalidName error when secret name could not be obtained correctly' do
+    invalid_format_resource_names = [
+      nil, '',
+      'invalid format resource name'
+    ]
 
-    @g_secret.name = 'projects/123/secrets/ABC/versions/1'
-    assert_raises GsmEnv::Secret::InvalidName do
-      assert_nil GsmEnv::Secret.new(@g_secret, @g_secret_version).name
+    invalid_format_resource_names.each do |resource_name|
+      @g_secret.name = resource_name
+
+      assert_raises GsmEnv::Secret::InvalidName do
+        GsmEnv::Secret.new(@g_secret, @g_secret_version).name
+      end
     end
   end
 end
