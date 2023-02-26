@@ -72,7 +72,7 @@ if defined?(GsmEnv)
 end
 ```
 
-Please refer to the [hidakatsuya/shopping_list](https://github.com/hidakatsuya/shopping_list).
+See also [hidakatsuya/shopping_list](https://github.com/hidakatsuya/shopping_list) for a reference of actual usage.
 
 ## Contributing
 
