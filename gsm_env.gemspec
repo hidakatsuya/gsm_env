@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ['hidakatsuya@gmail.com']
 
   spec.summary = 'A gem to set parameters obtained from GCP Secret Manager as environment variables.'
-  spec.description = spec.summary
+  spec.description = 'GsmEnv is a gem to set parameters obtained from GCP Secret Manager as environment variables.'
   spec.homepage = 'https://github.com/hidakatsuya/gsm_env'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.7.0'
