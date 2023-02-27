@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'gsm_env/version'
-require_relative 'gsm_env/loader'
+require_relative "gsm_env/version"
+require_relative "gsm_env/loader"
 
 module GsmEnv
   def self.load(project_id: nil, filter: nil, &assigner)
     loader = Loader.new(
-      project_id: project_id || ENV['GCP_PROJECT_ID'],
+      project_id: project_id || ENV["GCP_PROJECT_ID"],
       filter: filter
     )
     secrets = loader.load

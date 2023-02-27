@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'google/cloud/secret_manager'
+require "google/cloud/secret_manager"
 
-require_relative 'secret'
+require_relative "secret"
 
 module GsmEnv
   class Loader

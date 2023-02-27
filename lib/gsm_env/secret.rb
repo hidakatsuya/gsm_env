@@ -26,9 +26,9 @@ module GsmEnv
     def extract_secret_name_from(secret_resource_name)
       match = SECRET_RESOURCE_NAME_REGEXP.match(secret_resource_name)
 
-      raise InvalidName unless match && match['secret']
+      raise InvalidName unless match && match["secret"]
 
-      match['secret']
+      match["secret"]
     end
   end
 end

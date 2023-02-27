@@ -34,13 +34,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Usage
 
 ```ruby
-GsmEnv.load(project_id: 'your-project-id')
+GsmEnv.load(project_id: "your-project-id")
 ```
 
 Alternatively, you can omit the `project_id` by setting it to `GCP_PROJECT_ID` environment variable.
 
 ```ruby
-ENV['GCP_PROJECT_ID'] = 'your-project-id'
+ENV["GCP_PROJECT_ID"] = "your-project-id"
 
 GsmEnv.load
 ```
@@ -48,7 +48,7 @@ GsmEnv.load
 ### Filtering Secrets
 
 ```ruby
-GsmEnv.load(filter: 'labels.environment=production')
+GsmEnv.load(filter: "labels.environment=production")
 ```
 
 See https://cloud.google.com/secret-manager/docs/filtering for more details.
@@ -68,7 +68,7 @@ See [test/gsm_env_test.rb](https://github.com/hidakatsuya/gsm_env/blob/main/test
 ```ruby
 # config/application.rb
 if defined?(GsmEnv)
-  GsmEnv.load(project_id: 'your-project-id')
+  GsmEnv.load(project_id: "your-project-id")
 end
 ```
 
